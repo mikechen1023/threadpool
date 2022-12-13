@@ -76,8 +76,8 @@ struct threadpool_t {
   int num_threads_working;
   pthread_mutex_t  thcount_lock;       /* used for thread count etc */
   pthread_cond_t  threads_all_idle;    /* signal to thpool_wait     */
-  pthread_t *threads;
-  threadpool_task_t *queue;
+  pthread_t *threads;                  /* array of threads          */
+  threadpool_task_t *queue;            /* array of threadpool_task  */
   int thread_count;
   int queue_size;
   int head;
